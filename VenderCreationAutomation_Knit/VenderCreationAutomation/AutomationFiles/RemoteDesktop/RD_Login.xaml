@@ -1,0 +1,244 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RD_Open" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Password" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>376,1153</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Login to remote desktop" sap:VirtualizedContainerService.HintSize="336,1073" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="mstsc" Name="Command" />
+      <Variable x:TypeArguments="x:String" Default="[in_Config(&quot;ComputerName&quot;).ToString]" Name="RemoteDesktopName" />
+      <Variable x:TypeArguments="x:String" Default="[in_Config(&quot;UserPassword&quot;).ToString]" Name="Password" />
+      <Variable x:TypeArguments="x:Boolean" Name="MaximizeButton" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey to open run command window" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="r" KeyModifiers="Win" SendWindowMessages="False" SpecialKey="False">
+      <ui:SendHotkey.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="31c4d19886ce1adab897ec60ac6a4f1e" Selector="&lt;wnd app='explorer.exe' cls='Progman' title='Program Manager' /&gt;&lt;wnd omit:cls='SysListView32' omit:title='FolderView' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SendHotkey.Target>
+    </ui:SendHotkey>
+    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Command to open remote desktop" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[Command+ &quot;[k(enter)]&quot;]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cd56792ab81a5839a1a7f23eb4bfaa4a" Selector="&lt;wnd app='explorer.exe' cls='#32770' title='Run' /&gt;&lt;wnd ctrlid='12298' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,550" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Wait...Until Remote Desktop DialoBox Appear" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
+            <ui:WaitImageAppear.Image>
+              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+            </ui:WaitImageAppear.Image>
+            <ui:WaitImageAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='mstsc.exe' cls='#32770' title='Remote Desktop Connection' /&gt;" WaitForReady="INTERACTIVE" />
+            </ui:WaitImageAppear.Target>
+          </ui:WaitImageAppear>
+          <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Wait...Until Windows Credential" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_2">
+            <ui:WaitImageAppear.Image>
+              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMUAAAAgCAYAAACisbzBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVMSURBVHhe7ZfRUSNBDETJgBTIgBSIgBTIgAhIgAgIgAQIgH8iIAWn4asH1b52n2bWi8HUufTxyrsajUbqGe2uLzabzbZpmr90UzRN0E3RNEE3RdME3RRNE3RTNE3QTdE0QTdFs+Ph4WF7cXGxfXl5KcdPxdXV1fb6+rocW4L8b25uyrFD2TUFwUb8tkjNaeim+GSvKUgGYZK3t7d/Jh4C4lJcN9X/AXt9qqb4qbPx7U1xbLDklCI3x3PK/fqptbopmm+lm+KTVU1BAfhRENe8/ri/vLzc3t3dbd/f33e+2JOMT4zb29vdePU6ZQ5jr6+vu2vWdx/x+Pj4Mf709FSOkyfruY1YqkM5VPFZu9LHNZGNa2zPz88funBdzU34TMWfPJWP57ukxSF6Avt0f3+/W8c/m7nPOZkX/mjtPq4D18ecjbwHavYc+KUGjwvVXPZBegG5YXMf50tNgR9JIQzBtREk6b46EPhxT2Ea5+AqFtegxPGVn2yjDXYQCN88+KD1JAa+2jjyVA6qBZvPJw9wG0gTP5w6XNXhGYE2aAo6WPz6mjMtVB8+qkX+7ut1s1/oQY7kCumvvFQL/tpXr1k6sOaxZ0NxdC8bObDmKK78fC6+2PBXrYx77sleU1T4AiqcovPPt4R2Gwtjc5GBjSFGdXgpnFi6Z31isMnuN0Ji5xOEtYite+VWxa3GyMO1ENLERdb8bKwZ5AaZtzPSYo2esz3BN8dYs8ordf6uswHYU+tKS+KynttyLtfpAzOd95qC4knW8Q1Q4VWCKtI7XrYsnJjpKzRH9zoIsyIc5eh5s0nYiC1bHhaHtfD3OskjNwq0nsdWDTyZ3HeE9FjyH2mxRs9Z3fLVfkk3nq7pq7rlq/tjzwZgr7ROeEvg67acq+at1hnx5f8UOVYVOSpc9hny1UHw+Uuw8V4Lm0oMf4JxX9UhmO8x8l5UmozqHiH/pcZnffzSvkZPrvOTQ2Teqm1G+roOotKjsgnsqTXasI8ccsbYY/zA/XIuey5fHgY8QJZ0/tWmwD5CvqODMCObAFHy04Lxqg7Buq5H3gtyzVijukfIvxpzRlqs0TNzdTJvfrlHT4/l6IBxPYqdcUc2gd215g3DJxDQFMxVg+A7mytoBunHeajequJXmkKHdpaYGB2EGWwUc1iHNbjOTxMEXvv5hJjuB5Umo7pHSI9DP5/SvkZP6h7tsz5HlLe0I376JpUOYs3ZAOyeo7TPJ/whn08J66FB9f9L/GhTsMnYcrP1rTpLTJATvtXYDGJz6BGuOszK1/975JjXoqdSHjzWwe6aVPNnSA/ynb3aR1qs0XNUB/cclswb7aoDmXzX2QDsfha5zgcY+Shft+fcKm/G3SdZ/KMNKmZt4XrSUBDF+xNH/iSHnXnY2DT3Yxw/3R+KRFdNOY5Y5IUPa9IcoEOT392qnXjkR3w1HnZfo9JiCdZWfOZLDz8MMy205pKeNBCHCagRP365V3zPm+vMi3jMIXb64SObUG4ed3Y2sJOL7rUn/MqXfPRAkl81l2vmoS9zyRufKk+x1xQjFGBt4UAB6mgXEUhUhwooFB9/immjfN6hEI+5+m+R0BjkLT9gPcSr/LHLV4cKG/euyUiLJfDXRoP00PiSFofoCdz7Osxh7VHemRe1c+864cOY6yBGcUdng3s/2OwT4/LNfOVXzVUDYddcdPI5ya4pzhHEYPOqsaYZcbZNoSf46KnfNCPOtil4hfKmqMaaZsZZNQXfynzn6/u33xLNVzirptCfPd4QS3+mmmbEWf/Rbpqv0E3RNEE3RdME3RRNE3RTNM0em+0fONPSXFJfAS4AAAAASUVORK5CYII=" />
+            </ui:WaitImageAppear.Image>
+            <ui:WaitImageAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='credentialuibroker.exe' cls='Credential Dialog Xaml Host' title='Windows Security' /&gt;" WaitForReady="INTERACTIVE" />
+            </ui:WaitImageAppear.Target>
+          </ui:WaitImageAppear>
+          <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'text  Password'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[Password+ &quot;[k(enter)]&quot;]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="309f2245ea16c1d300930f34c4b98975" Selector="&lt;wnd app='credentialuibroker.exe' cls='Credential Dialog Xaml Host' title='Windows Security' /&gt;&lt;ctrl automationid='PasswordField_2' /&gt;&lt;ctrl automationid='PlaceholderTextContentPresenter' /&gt;" WaitForReady="INTERACTIVE" />
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type computer name" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[RemoteDesktopName+&quot;[k(enter)]&quot;]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c6bc14db0f3ff0f6394ee284d1a37763" Selector="&lt;wnd app='mstsc.exe' cls='#32770' title='Remote Desktop Connection' /&gt;&lt;wnd ctrlid='5012' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type password" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="False" Text="[in_Password+&quot;[k(enter)]&quot;]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dc09c0e31adc8ed5974a3b782bce0282" Selector="&lt;wnd app='credentialuibroker.exe' cls='Credential Dialog Xaml Host' title='Windows Security' /&gt;&lt;ctrl automationid='PasswordField_2' /&gt;&lt;ctrl automationid='PlaceholderTextContentPresenter' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="508,175" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Check windows credential dialog box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="windowsCredentialWindow" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ImageFound DisplayName="Image Exists _ windows credential dialog box" Found="[windowsCredentialWindow]" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="ImageFound_4">
+              <ui:ImageFound.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAUCAYAAABh/HgbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVGhD7ZTbrcIwEEQphVLohEbogzbogk7SRq7OlQ4aVnZA4ZUPf4zA493ZxyTZTdM0D2wXw6CNYxi0cQyDNo5h0MYxDNo4mgYdDof5fD7fcfv9/o67Xq/zbre73Z1Op9vdszD/G7hcLv/1RCvm3Vi7l0TTIIw4Ho+3s2YkV2PW4FuLon+Wlef6AH4a7GpNzaZBdSDNSG5twcS3DOLtefVhehVvNQhgBkbxn08eQybXupenET8l+YpXPg2qnyCHSW3qZQ4aQF54n4DvfW7o2dxcYvZLjLHOXc/W4BfO3jFHHQCfvRAD5znRNSgdRzQ5itswqAZZzMXxXwPMcZCMc1DAmRzqOQy/6FuLOrkIc3sgTt3k8uxc1M0Z8z77zDPaufjUzn3CcWccd73+uwYhZqJicv4am430BqDxbB5oUNUDxpProqxDLLx9EVcNXgKxLov/FdYwJvHIIHmQe6l6med8LXQNAhRkeIURRKwWe9agOrADwbcMMl59DUGTO2IyB74uqYXU6sV/2iD7b82RWDSIAq2GaCS5bKQ3AI3wX56mHIj7qplnYqnhgAybNRMtnrzk0POBIL61oNqvyD7QzD6dJ2OtS41aB31icu6KRYMQrE0yWOWyEe6yYJ7JZQiAdg7ksCIXWhdRl0d981x8BfHGEJ938iB17TH57BOdnA/OXJB7yTzvfdA8t7Bo0MBngUH5ILYwDPoReOvybe1hGPQD+Kl/9PaAYdDGMQzaNKb5D1tLs3d2QVljAAAAAElFTkSuQmCC" />
+              </ui:ImageFound.Image>
+              <ui:ImageFound.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='credentialuibroker.exe' cls='Credential Dialog Xaml Host' title='Windows Security' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+              </ui:ImageFound.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ImageFound>
+            <If Condition="[windowsCredentialWindow]" DisplayName="If windows credential dialog box exists" sap:VirtualizedContainerService.HintSize="464,247" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="200,99" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Then>
+            </If>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Sequence DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window " sap:VirtualizedContainerService.HintSize="500,669" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="2ba85670060499d7b1b77af61ef842b7" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='* - Remote Desktop Connection' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,523" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ImageFound DisplayName="Image Exists MaximizeButton" Found="[MaximizeButton]" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                <ui:ImageFound.Image>
+                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAYAAAAVibZIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA7SURBVEhLY/hPAzBqKPUBfQ1lYGAgCmMDeA0lBEYNhbJQwaih2AHNDCUGYwOEnUMGGDWU+mBEG/r/PwAov2z2vpmsqwAAAABJRU5ErkJggg==" />
+                </ui:ImageFound.Image>
+                <ui:ImageFound.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='* - Remote Desktop Connection' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                </ui:ImageFound.Target>
+              </ui:ImageFound>
+              <If Condition="[MaximizeButton]" DisplayName="If Maximize Button Exists Then" sap:VirtualizedContainerService.HintSize="464,253" sap2010:WorkflowViewState.IdRef="If_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Maximize" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+                    <ui:ClickImage.CursorPosition>
+                      <ui:CursorPosition OffsetX="0" OffsetY="0" Position="Center" />
+                    </ui:ClickImage.CursorPosition>
+                    <ui:ClickImage.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAAWCAYAAADNX8xBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA0SURBVDhP7c2xCQAADAJB91/a9BLQIuk8sH3BIw15fyEA0dQachpqSKyhZMrfhxryjkLkAJTsvogkt6MyAAAAAElFTkSuQmCC" />
+                    </ui:ClickImage.Image>
+                    <ui:ClickImage.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                    </ui:ClickImage.Target>
+                  </ui:ClickImage>
+                </If.Then>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+      </ui:WindowScope>
+    </Sequence>
+  </Sequence>
+</Activity>

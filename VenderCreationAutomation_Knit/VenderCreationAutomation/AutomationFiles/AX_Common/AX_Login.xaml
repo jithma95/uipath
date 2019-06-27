@@ -1,0 +1,113 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AX_Login" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="498,883" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AX-Login" sap:VirtualizedContainerService.HintSize="458,803" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Login to AX" sap:VirtualizedContainerService.HintSize="436,679" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window AX Login" sap:VirtualizedContainerService.HintSize="414,555" sap2010:WorkflowViewState.IdRef="WindowScope_4" InformativeScreenshot="dedb4476c4ebd2e48ea9066c05da8259" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='* - Remote Desktop Connection' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,369" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="FeedbackImage" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,230" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Click Image " sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+                      <ui:ClickImage.CursorPosition>
+                        <ui:CursorPosition OffsetX="0" OffsetY="0" Position="Center" />
+                      </ui:ClickImage.CursorPosition>
+                      <ui:ClickImage.Image>
+                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+                      </ui:ClickImage.Image>
+                      <ui:ClickImage.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                      </ui:ClickImage.Target>
+                    </ui:ClickImage>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey to Open AX" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,154" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="B" KeyModifiers="Alt, Ctrl, Shift" SendWindowMessages="False" SpecialKey="False">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="bb77a3d3ddd6527d501ccbe2b40fe9f9" TimeoutMS="40000" WaitForReady="INTERACTIVE" />
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+      </ui:WindowScope>
+    </Sequence>
+  </Sequence>
+</Activity>
