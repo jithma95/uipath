@@ -1,0 +1,46 @@
+{
+  "name": "CustomerCreationAutomation",
+  "description": "Automate the customer creation in AX system",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.ComputerVision.Activities": "[1.0.1]",
+    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
+    "UiPath.Excel.Activities": "[2.6.0]",
+    "UiPath.Mail.Activities": "[1.5.0]",
+    "UiPath.MicrosoftOffice365.Activities": "0.1.0",
+    "UiPath.System.Activities": "[19.5.0]",
+    "UiPath.UIAutomation.Activities": "[19.5.0]",
+    "UiPath.Vision": "[1.6.0]",
+    "UiPathTeam.Encryption.Activities": "[1.0.6844.29335]",
+    "UiPathTeam.RunWithTimeout.Activities": "[1.0.7]",
+    "UiPathTeam.SharePoint.Activities": "[1.3.0]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "19.4.2.0",
+  "projectVersion": "1.0.14",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "OrchestratorQueueName",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      }
+    ],
+    "output": []
+  },
+  "webServices": []
+}

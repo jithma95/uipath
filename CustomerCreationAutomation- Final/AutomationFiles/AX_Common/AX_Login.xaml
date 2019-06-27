@@ -1,0 +1,93 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AX_Login" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="498,898" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AX-Login" sap:VirtualizedContainerService.HintSize="458,818" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Login to AX" sap:VirtualizedContainerService.HintSize="436,694" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window AX Login" sap:VirtualizedContainerService.HintSize="414,570" sap2010:WorkflowViewState.IdRef="WindowScope_4" InformativeScreenshot="dedb4476c4ebd2e48ea9066c05da8259" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='* - Remote Desktop Connection' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,424" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="FeedbackImage" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Find Image" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
+                <ui:WaitImageAppear.Image>
+                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAnCAYAAABe81ttAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANcSURBVGhD7dixS+NQHMDx+xMcXR0dO3YVbriCgwEHAzdIpsPp6HSIm9xwyA1FHBwcCjoU2kGogxCXQhwC6SDEQYiDwxtuyHBDxt/9fi997Wv6a02T19JThy+Nadq8D+81jf0UPgTwHvqAvrU+oG+tpUDFXg3E7qhIe6S415huoVACRjtbk20z7W6x72GqhUCnAvU47HZVPse9Z9mMQsVXa7gcZVmcikVSCP0yCI/jzlE0Y9BoLyeSYpGUBqVwH3euIpmBKpgOnYYlkHoci2AZKIXHsuecMyPQAAcYKsgspGoCqWKgGHfOeSsNrTVscHEwAQ40pMESZBZ0DKaHqClQ2s+de55KQzeuHKh/q4GHAxpCuY4OQVy3Ie4HED/hhctvQ9SpQ9hACHWWJqjztPgCa6Zx556nUtCNqwMJrZzZcInQgMPuWyDuXEj+JhC9JNDtp9E27YufXBAdvIHoIA6Lb6qQ3FYB7rDeoHuq3Ge1JNQZ5vywoPs5xcqlOEDGQkAkEqhfJVD7rfUL9zUH4FhA0rMkRuZr9UdxY8hbYehGy4H15gi6eeHA6U4VXMSqWY17roRYjQxyAKXoOYkV7hiK7aE4tjgUcQTVq/1MZ9XDoqO6XJoTM6khVTSzdCw8HvJALW4seSoMzSJVh/tbOKsVeeGhmZoF1JOz+tJmcXrcWPJUHMrMKFXFr5s2QX1PXnTyIKmuT8vXY3F63FjyZBxKOd/xKqqgDIrrv4RuntsQqqXLoLhWd+kyQL3j5nF6McILDQfTW+2L0YwZTbPBew7lTFkzPqP0HB0TPgcsLBs3ljwVhlIcLi3drrTqIP7gDQNCuJlVNwwRHiN8m4XpcWPImwGowvFVWgfQffLk0iQUXXQo2qZ93UcPTq8dFpaNG0PeSkEpDqe3Nni0b0/g8sHF5RzIaNvunMB6w4LEr7EwPe7c82QUSigF0/+e6ALDfwTW6Dv35nUk3fNy556n0lCKxWQjnHqUUAsq53gj31/8bFJGoOsKkU2h9G0Kv2cJGvSWM5uUESg1BnkthNpNmk0GpmcISRmDUiyKC5dsfL+cJasyClWxOK2T6xmz6Zf/2YRrIVCV/CxmoTib7NfJgoCqhUJVOrJ7i0j1MwmFSO41plsKdBX6gL613gk0gH9+Z1RO6AznZwAAAABJRU5ErkJggg==" />
+                </ui:WaitImageAppear.Image>
+                <ui:WaitImageAppear.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+                </ui:WaitImageAppear.Target>
+              </ui:WaitImageAppear>
+              <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey to Open AX" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,154" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="B" KeyModifiers="Alt, Ctrl, Shift" SendWindowMessages="False" SpecialKey="False">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="bb77a3d3ddd6527d501ccbe2b40fe9f9" WaitForReady="INTERACTIVE" />
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+      </ui:WindowScope>
+    </Sequence>
+  </Sequence>
+</Activity>
